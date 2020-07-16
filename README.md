@@ -3,8 +3,8 @@
 Your goal is to create an app using the [spotify wep api](https://developer.spotify.com/documentation/web-api/).
 We have already provided you with a flask project able to authenticate to spotify.
 Your job is to add two new features:
-    - A way to fetch data from spotify's new releases API and persist it somewhere. for example using [TinyDB](https://tinydb.readthedocs.io/en/stable/intro.html).
-    - A route : `/api/artists/` returning a JSON containing informations about artists that have released new tracks recently.
+ - A way to fetch data from spotify's new releases API and persist it somewhere. for example using [TinyDB](https://tinydb.readthedocs.io/en/stable/intro.html)
+ - A route : `/api/artists/` returning a JSON containing informations about artists that have released new tracks recently.
 
 # How to run this sample
 
