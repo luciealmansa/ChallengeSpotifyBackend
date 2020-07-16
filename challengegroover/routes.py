@@ -1,6 +1,16 @@
-from flask import Blueprint, redirect, session, request, jsonify, render_template
+from flask import Blueprint, redirect, request, jsonify, render_template
 from .spotify_auth import SpotifyAuth
 
+# Landing page of the app.
+root = Blueprint("root", "root", url_prefix="/")
+
+
+@root.route("/")
+def index():
+    return render_template("index.html")
+
+
+# Spotify Authorization.
 auth = Blueprint("auth", "auth", url_prefix="/auth")
 
 
@@ -17,9 +27,7 @@ def callback():
     return jsonify(tokens)
 
 
-root = Blueprint("root", "root", url_prefix="/")
+# API
+api = Blueprint("api", "api", url_prefix="/api")
 
-
-@root.route("/")
-def index():
-    return render_template("index.html")
+# Add your "artists" route here.

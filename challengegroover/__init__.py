@@ -6,6 +6,7 @@ from .routes import *
 
 
 def create_app():
+    # config
     app = Flask(
         __name__,
         instance_relative_config=True,
@@ -27,10 +28,12 @@ def create_app():
     )
     app.logger.addHandler(handler)
 
+    # routes
     with app.app_context():
-        from .routes import auth, root
+        from .routes import auth, root, api
 
-        app.register_blueprint(auth)
         app.register_blueprint(root)
+        app.register_blueprint(auth)
+        app.register_blueprint(api)
 
     return app
